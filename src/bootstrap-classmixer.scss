@@ -1,0 +1,110 @@
+
+$classes: ('padding', 'padding-bottom', 'padding-top',
+	'padding-right', 'padding-left', 'margin',
+	'margin-top', 'margin-bottom', 'margin-left',
+	'margin-right', 'height', 'width');
+
+$fontclasses: ('font');
+$fontvalues: ('font-size');
+
+$colors: ('black', 'navy', 'darkblue', 'mediumblue', 'blue', 'darkgreen', 'green', 'teal', 'darkcyan', 'deepskyblue',
+	'darkturquoise', 'mediumspringgreen', 'lime', 'springgreen', 'aqua', 'cyan', 'midnightblue', 'dodgerblue', 'lightseagreen',
+	'forestgreen', 'seagreen', 'darkslategray', 'darkslategrey', 'limegreen', 'mediumseagreen', 'turquoise', 'royalblue', 'steelblue',
+	'darkslateblue', 'mediumturquoise', 'indigo', 'darkolivegreen', 'cadetblue', 'cornflowerblue', 'rebeccapurple', 'mediumaquamarine',
+	'dimgray', 'dimgrey', 'slateblue', 'olivedrab', 'slategray', 'slategrey', 'lightslategray', 'lightslategrey', 'mediumslateblue',
+	'lawngreen', 'chartreuse', 'aquamarine', 'maroon', 'purple', 'olive', 'gray', 'grey', 'skyblue', 'lightskyblue', 'blueviolet',
+	'darkred', 'darkmagenta', 'saddlebrown', 'darkseagreen', 'lightgreen', 'mediumpurple', 'darkviolet', 'palegreen', 'darkorchid',
+	'yellowgreen', 'sienna', 'brown', 'darkgray', 'darkgrey', 'lightblue', 'greenyellow', 'paleturquoise', 'lightsteelblue', 'powderblue',
+	'firebrick', 'darkgoldenrod', 'mediumorchid', 'rosybrown', 'darkkhaki', 'silver', 'mediumvioletred', 'indianred', 'peru', 'chocolate',
+	'tan', 'lightgray', 'lightgrey', 'thistle', 'orchid', 'goldenrod', 'palevioletred', 'crimson', 'gainsboro', 'plum', 'burlywood', 'lightcyan',
+	'lavender', 'darksalmon', 'violet', 'palegoldenrod', 'lightcoral', 'khaki', 'aliceblue', 'honeydew', 'azure', 'sandybrown', 'wheat', 'beige',
+	'whitesmoke', 'mintcream', 'ghostwhite', 'salmon', 'antiquewhite', 'linen', 'lightgoldenrodyellow', 'oldlace', 'red', 'fuchsia', 'magenta',
+	'deeppink', 'orangered', 'tomato', 'hotpink', 'coral', 'darkorange', 'lightsalmon', 'orange', 'lightpink', 'pink', 'gold', 'peachpuff',
+	'navajowhite', 'moccasin', 'bisque', 'mistyrose', 'blanchedalmond', 'papayawhip', 'lavenderblush', 'seashell', 'cornsilk', 'lemonchiffon',
+	'floralwhite', 'snow', 'yellow', 'lightyellow', 'ivory', 'white');
+
+$colorClasses: ('color', 'background-color');
+
+@mixin generateStyleNumbers($tags, $values, $prefix, $min, $max, $tick, $vault, $postPrefix)
+{
+	@for $i from $min to $max+1
+	{
+		@for $j from 1 to length($tags)+1
+		{
+			.#{$prefix}#{nth($tags, $j)}-#{$i}#{$postPrefix} {
+				#{nth($values, $j)}: #{$i}#{$vault};
+			}
+		}
+	}
+}
+
+@mixin generateStyleData($tags, $values, $prefix)
+{
+	@for $i from 1 to length($tags)+1
+	{
+		@for $j from 1 to length($values)+1
+		{
+			.#{$prefix}#{nth($tags, $i)}-#{nth($values, $j)} {
+				#{nth($tags, $i)}: #{nth($values, $j)};
+			}
+		}
+	}
+}
+
+@media (max-width: 1199px) {
+	@include generateStyleNumbers($classes, $classes, 'md-', 0, 200, 1, 'px', '');
+	@include generateStyleNumbers($classes, $classes, 'md-', 1, 100, 0.5, '%', 'pr');
+	@include generateStyleNumbers($classes, $classes, 'md-', 1, 100, 1, 'vw', 'vw');
+
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'md-', 0, 100, 1, 'px', '');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'md-', 0, 80, 1, 'pt', 'pt');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'md-', 0, 100, 1, 'vw', 'vw');
+
+	@include generateStyleData($colorClasses, $colors, 'md-');
+}
+
+@media (max-width: 991px) {
+	@include generateStyleNumbers($classes, $classes, 'sm-', 0, 200, 1, 'px', '');
+	@include generateStyleNumbers($classes, $classes, 'sm-', 1, 100, 0.5, '%', 'pr');
+	@include generateStyleNumbers($classes, $classes, 'sm-', 1, 100, 1, 'vw', 'vw');
+
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'sm-', 0, 100, 1, 'px', '');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'sm-', 0, 80, 1, 'pt', 'pt');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'sm-', 0, 100, 1, 'vw', 'vw');
+
+	@include generateStyleData($colorClasses, $colors, 'sm-');
+}
+
+@media (max-width: 576px) {
+	@include generateStyleNumbers($classes, $classes, 'xs-', 0, 200, 1, 'px', '');
+	@include generateStyleNumbers($classes, $classes, 'xs-', 1, 100, 0.5, '%', 'pr');
+	@include generateStyleNumbers($classes, $classes, 'xs-', 1, 100, 1, 'vw', 'vw');
+
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'xs-', 0, 100, 1, 'px', '');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'xs-', 0, 80, 1, 'pt', 'pt');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'xs-', 0, 100, 1, 'vw', 'vw');
+
+	@include generateStyleData($colorClasses, $colors, 'xs-');
+}
+
+@media (min-width: 1200px) {
+	@include generateStyleNumbers($classes, $classes, 'lg-', 0, 200, 1, 'px', '');
+	@include generateStyleNumbers($classes, $classes, 'lg-', 1, 100, 0.5, '%', 'pr');
+	@include generateStyleNumbers($classes, $classes, 'lg-', 1, 100, 1, 'vw', 'vw');
+
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'lg-', 0, 100, 1, 'px', '');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'lg-', 0, 80, 1, 'pt', 'pt');
+	@include generateStyleNumbers($fontclasses, $fontvalues, 'lg-', 0, 100, 1, 'vw', 'vw');
+
+	@include generateStyleData($colorClasses, $colors, 'lg-');
+}
+
+@include generateStyleNumbers($classes, $classes, '', 0, 200, 1, 'px', '');
+@include generateStyleNumbers($classes, $classes, '', 1, 100, 0.5, '%', 'pr');
+@include generateStyleNumbers($classes, $classes, '', 1, 100, 1, 'vw', 'vw');
+
+@include generateStyleNumbers($fontclasses, $fontvalues, '', 0, 100, 1, 'px', '');
+@include generateStyleNumbers($fontclasses, $fontvalues, '', 0, 80, 1, 'pt', 'pt');
+@include generateStyleNumbers($fontclasses, $fontvalues, '', 0, 100, 1, 'vw', 'vw');
+
+@include generateStyleData($colorClasses, $colors, '');

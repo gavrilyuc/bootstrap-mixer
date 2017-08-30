@@ -1,0 +1,14 @@
+{
+    "name": "gavrilyuc/bootstrap-mixer",
+    "description": "Advanced styles classes on bootstrap. This css file optimize css files for smell styles or to be sometime deleted",
+    "type": "library",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "DmitryGavrilyuc",
+            "email": "gavrilyuc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
