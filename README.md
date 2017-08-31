@@ -1,6 +1,6 @@
 # Bootstrap Mixer
 
-This is advanced bootstrap classes, mixing classes and easy styling blocks.
+This is advanced bootstrap classes, mixing classes and easy styling blocks.<br />
 The whole point is to divide the frequently used styles into separate classes.
 
 ## Instalation
@@ -24,13 +24,13 @@ Download sass compiler:
     Then 
     > sudo gem install sass
 After that compile sources: ([see sass documentation](http://sass-lang.com/))
-> sass --watch bootstrap-mixer.scss:bootstrap-classmixer.css --style compressed
+> sass --watch bootstrap-classmixer.scss:bootstrap-classmixer.css --style compressed
 
 ## Using and information
 
-`padding-left-50` -> added padding-left 50**px**;
-`padding-left-50pr` -> added padding-left 50**%**;
-`padding-left-50vw` -> added padding-left 50**vw**;
+`padding-left-50` -> added padding-left 50 **pixels**;<br />
+`padding-left-50pr` -> added padding-left 50 **procent**;<br />
+`padding-left-50vw` -> added padding-left 50 **vw**;<br />
 
 ```html
 <div class="padding-top-50 background-color-black">
