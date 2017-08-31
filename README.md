@@ -22,8 +22,10 @@ Download sass compiler:
 * **Linux**
     If you're using a distribution of Linux, you'll need to install Ruby first. You can install Ruby through the apt package manager, rbenv, or rvm.
     Then 
-    > sudo gem install sass
-After that compile sources: ([see sass documentation](http://sass-lang.com/))
+> sudo gem install sass
+
+After that compile sources: [see sass documentation](http://sass-lang.com/)
+
 > sass --watch bootstrap-classmixer.scss:bootstrap-classmixer.css --style compressed
 
 ## Using and information
