@@ -1,7 +1,7 @@
 # Bootstrap Mixer
 
-This is advanced bootstrap classes, mixing classes and easy styling blocks.<br />
-The whole point is to divide the frequently used styles into separate classes.
+This is addition to bootstrap, includes mixing classes and easy way to style blocks.<br />
+It helps to improve using repetitive styles.
 
 ## Instalation
 
@@ -39,13 +39,13 @@ After that compile sources: [see sass documentation](http://sass-lang.com/)
   Example text
 </div>
 ```
-Your use multi screens classes: `lg-*`, `md-*`, `sm-*`, `xs-*`
+You may use multi screens classes: `lg-*`, `md-*`, `sm-*`, `xs-*`
 ```html
 <div class="lg-padding-top-150 md-padding-top-100 sm-padding-top-50 xs-padding-top-0">
   Example text
 </div>
 ```
-Using web default colors:
+Using default web colors:
 ```html
 <div class="lg-color-red md-color-silver sm-color-pink xs-color-black">
   Example text
